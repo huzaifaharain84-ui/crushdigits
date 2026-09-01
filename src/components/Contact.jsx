@@ -4,20 +4,37 @@ const initialForm = { name: '', email: '', phone: '', message: '' }
 
 export default function Contact() {
   const [form, setForm] = useState(initialForm)
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState('idle') // idle | sending | sent | error
+  const [errorMessage, setErrorMessage] = useState('')
 
   function handleChange(e) {
     const { name, value } = e.target
     setForm((prev) => ({ ...prev, [name]: value }))
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    // TODO: wire this up to a real endpoint (e.g. a Vercel serverless
-    // function under /api, or a form service like Formspree) before
-    // publishing. Nothing is sent anywhere yet.
-    setSubmitted(true)
-    setForm(initialForm)
+    setStatus('sending')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}))
+        throw new Error(data.error || 'Something went wrong. Please try again.')
+      }
+
+      setStatus('sent')
+      setForm(initialForm)
+    } catch (err) {
+      setStatus('error')
+      setErrorMessage(err.message)
+    }
   }
 
   return (
@@ -46,9 +63,16 @@ export default function Contact() {
               <strong>16386067</strong>
             </div>
             <div className="contact-item">
+              <small>Phone</small>
+              <strong>03300431234</strong>
+            </div>
+            <div className="contact-item">
               <small>Website</small>
               <strong>crushdigits.co.uk</strong>
             </div>
+            {/* Note: the Footer now shows crushdigits.vercel.app per your latest request —
+                left this contact-info entry as crushdigits.co.uk since you only asked
+                for the footer change. Let me know if you want this one updated too. */}
           </div>
 
           <form onSubmit={handleSubmit}>
@@ -80,14 +104,17 @@ export default function Contact() {
               value={form.message}
               onChange={handleChange}
             />
-            <button className="btn" type="submit">
-              Send Enquiry
+            <button className="btn" type="submit" disabled={status === 'sending'}>
+              {status === 'sending' ? 'Sending…' : 'Send Enquiry'}
             </button>
-            {submitted && (
+            {status === 'sent' && (
               <p style={{ color: '#1e63b5', fontWeight: 600 }}>
-                Thank you — your message has been noted. (Connect this
-                form to a real backend before going live.)
+                Thank you — your enquiry has been sent. We'll be in touch
+                soon.
               </p>
+            )}
+            {status === 'error' && (
+              <p style={{ color: '#b3261e', fontWeight: 600 }}>{errorMessage}</p>
             )}
           </form>
         </div>

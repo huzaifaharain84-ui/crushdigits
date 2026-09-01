@@ -3,6 +3,12 @@ export default function Hero() {
     <section className="hero" id="home">
       <div className="container hero-grid">
         <div>
+          {/* Wordmark placeholder — swap this div for an <img src="/wordmark.svg" ...>
+              (or .png) once the logo asset is ready. */}
+          <div className="wordmark-placeholder" aria-label="Wordmark placeholder">
+            <span>Wordmark / logo goes here</span>
+          </div>
+          <p className="company-name">Crush Digits Accountants Limited</p>
           <span className="badge">ACCOUNTING • BOOKKEEPING • TAX</span>
           <h1>Clarity in your numbers. Confidence in your business.</h1>
           <p>

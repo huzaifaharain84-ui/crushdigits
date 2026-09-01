@@ -2,8 +2,8 @@ export default function Header() {
   return (
     <header>
       <div className="container nav">
-        <a className="logo" href="#home">
-          Crush<span>Digits</span>
+        <a className="logo-placeholder" href="#home" aria-label="Crush Digits Accountants Limited — home">
+          <span>Logomark</span>
         </a>
         <nav>
           <a href="#home">Home</a>
