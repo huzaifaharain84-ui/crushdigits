@@ -2,8 +2,12 @@ export default function Header() {
   return (
     <header>
       <div className="container nav">
-        <a className="logo-placeholder" href="#home" aria-label="Crush Digits Accountants Limited — home">
-          <span>Logomark</span>
+        <a href="#home" aria-label="Crush Digits Accountants Limited — home">
+          <img
+            src="/logo.jpeg"
+            alt="Crush Digits Accountants Limited logo"
+            className="logo-image"
+          />
         </a>
         <nav>
           <a href="#home">Home</a>
