@@ -11,7 +11,6 @@ header{position:sticky;top:0;z-index:20;background:rgba(216,216,214,.96);backdro
 nav{display:flex;gap:28px;font-size:14px;font-weight:600}
 nav a:hover{color:var(--brand-dark-emerald)}
 
-.wordmark-image{display:block;width:min(100%,340px);height:auto;max-height:90px;object-fit:contain;margin:0 0 12px;padding:0;align-self:flex-start}
 .company-name{color:var(--brand-evergreen);font-weight:700;font-size:14px;letter-spacing:.3px;margin-bottom:16px}
 
 .btn{display:inline-block;background:var(--brand-dark-emerald);color:#fff;padding:13px 22px;border-radius:8px;font-weight:700;transition:.2s;border:0;cursor:pointer;font:inherit}
@@ -93,5 +92,5 @@ footer{background:var(--brand-evergreen);color:#d9e6dc;padding:30px 0}
   height: auto;
   max-height: 280px;
   object-fit: contain;
-  margin: 0 0 0px;
+  margin: 0 -26px 0px;
 }

@@ -4,7 +4,7 @@ export default function Hero() {
       <div className="container hero-grid">
         <div>
           <img
-            src="/wordmark.jpeg"
+            src="/wordmark.png"
             alt="Crush Digits Accountants Limited wordmark"
             className="wordmark-image"
           />
