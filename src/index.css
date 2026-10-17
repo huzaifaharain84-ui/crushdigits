@@ -29,7 +29,7 @@ nav a:hover{color:var(--brand-dark-emerald);background:rgba(133,212,60,.2)}
 h1{font-size:clamp(36px,4.4vw,56px);line-height:1.08;color:var(--brand-dark-emerald);letter-spacing:-1.5px;margin-bottom:22px;text-wrap:balance}
 .hero p{font-size:18px;color:var(--muted);margin-bottom:30px}
 .hero-visual{position:absolute;top:0;bottom:0;right:0;width:57%;z-index:1}
-.hero-image{position:absolute;inset:0;clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);background:#0a1d13}
+.hero-image{position:absolute;inset:0;clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);background:#e4e0d7}
 .hero-scene,.hero-photo{display:block;width:100%;height:100%;object-fit:cover}
 .hero-ribbon{position:absolute;inset:0;z-index:2}
 .hero-ribbon-green{background:linear-gradient(180deg,var(--brand-medium-jungle),var(--brand-dark-emerald));clip-path:polygon(15% 0,18% 0,0 100%,-3% 100%)}
@@ -88,7 +88,7 @@ section{padding:85px 0}
 .cta .btn:hover{background:#f0c04a;color:var(--brand-evergreen)}
 .cta-visual{display:flex;justify-content:center}
 .cta-person,.cta-photo{display:block;width:min(100%,320px);height:auto;filter:drop-shadow(0 20px 30px rgba(0,0,0,.3))}
-.cta-photo{border-radius:50%;aspect-ratio:1;object-fit:cover}
+.cta-photo{border-radius:50%;aspect-ratio:1;object-fit:cover;object-position:50% 40%;border:6px solid rgba(255,255,255,.9);box-shadow:0 0 0 10px rgba(133,212,60,.18)}
 
 /* Contact */
 .contact{background:linear-gradient(180deg,#fff 0%,#f1f8ec 100%)}

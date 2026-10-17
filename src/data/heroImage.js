@@ -5,4 +5,4 @@ export const HERO_PHOTO = ''
 
 // Optional real photo for the "Get in Touch" banner (put it in /public,
 // for example '/team-photo.jpg'). Leave empty to show the illustration.
-export const CTA_PHOTO = ''
+export const CTA_PHOTO = '/team-photo.jpg'

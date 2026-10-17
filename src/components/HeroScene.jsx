@@ -51,9 +51,9 @@ export default function HeroScene() {
     >
       <defs>
         <linearGradient id="hs-wall" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#263d53" />
-          <stop offset="0.6" stopColor="#132b40" />
-          <stop offset="1" stopColor="#0b1b2b" />
+          <stop offset="0" stopColor="#f4f2ec" />
+          <stop offset="0.65" stopColor="#e4e0d7" />
+          <stop offset="1" stopColor="#cfcabf" />
         </linearGradient>
         <linearGradient id="hs-floor" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#cfcac0" />
@@ -61,9 +61,9 @@ export default function HeroScene() {
           <stop offset="1" stopColor="#8f8b81" />
         </linearGradient>
         <radialGradient id="hs-spot" cx="0.5" cy="0" r="0.9">
-          <stop offset="0" stopColor="#d9edff" stopOpacity="0.52" />
-          <stop offset="0.5" stopColor="#8fc8ff" stopOpacity="0.14" />
-          <stop offset="1" stopColor="#8fc8ff" stopOpacity="0" />
+          <stop offset="0" stopColor="#fffbe6" stopOpacity="0.85" />
+          <stop offset="0.5" stopColor="#fff3c9" stopOpacity="0.25" />
+          <stop offset="1" stopColor="#fff3c9" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="hs-glass" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#f3fbf6" />
@@ -90,12 +90,27 @@ export default function HeroScene() {
           <stop offset="0" stopColor="#fff" stopOpacity="0.5" />
           <stop offset="1" stopColor="#fff" stopOpacity="0" />
         </linearGradient>
+        <linearGradient id="hs-oak" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor="#c59c68" />
+          <stop offset="0.5" stopColor="#dbb888" />
+          <stop offset="1" stopColor="#b98e5a" />
+        </linearGradient>
+        <linearGradient id="hs-plate" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#ffffff" />
+          <stop offset="1" stopColor="#ece9e2" />
+        </linearGradient>
+        <filter id="hs-drop" x="-20%" y="-30%" width="140%" height="170%">
+          <feDropShadow dx="2" dy="5" stdDeviation="4" floodColor="#2b2218" floodOpacity="0.38" />
+        </filter>
+        <filter id="hs-logo-shadow" x="-10%" y="-20%" width="125%" height="150%">
+          <feDropShadow dx="1.5" dy="3" stdDeviation="2.2" floodColor="#1c3a22" floodOpacity="0.4" />
+        </filter>
         <mask id="hs-reflect-mask">
           <rect x="0" y="440" width="700" height="140" fill="url(#hs-fade)" />
         </mask>
         <filter id="hs-noise" x="0" y="0" width="100%" height="100%">
           <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" />
-          <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.09 0" />
+          <feColorMatrix values="0 0 0 0 0.35  0 0 0 0 0.3  0 0 0 0 0.25  0 0 0 0.10 0" />
         </filter>
         <filter id="hs-blur6" x="-30%" y="-30%" width="160%" height="160%">
           <feGaussianBlur stdDeviation="6" />
@@ -124,24 +139,25 @@ export default function HeroScene() {
         <ellipse cx="250" cy="6" rx="16" ry="4" />
         <ellipse cx="470" cy="6" rx="16" ry="4" />
       </g>
-      {/* slim wall panel behind the logo */}
-      <rect x="170" y="100" width="410" height="150" rx="3" fill="#071522" opacity="0.55" />
-      <rect x="170" y="100" width="410" height="150" rx="3" fill="none" stroke="#ffffff" strokeOpacity="0.07" />
-
-      {/* logo: shadow, depth layers, face */}
-      <g opacity="0.6" filter="url(#hs-blur6)">
-        <image href="/cd-mark.png" x="204" y="162" width="124" height="63" filter="url(#hs-dark)" />
-        <image href="/logo-wordmark.png" x="344" y="152" width="212" height="52" filter="url(#hs-dark)" />
+      {/* oak slat feature wall behind the logo */}
+      <g filter="url(#hs-drop)">
+        <rect x="140" y="70" width="470" height="210" fill="url(#hs-oak)" />
       </g>
-      {[5, 4, 3, 2, 1].map((d) => (
-        <g key={d} transform={`translate(${d * 0.9} ${d * 0.9})`}>
-          <image href="/cd-mark.png" x="200" y="152" width="124" height="63" filter="url(#hs-dark)" />
-          <image href="/logo-wordmark.png" x="340" y="142" width="212" height="52" filter="url(#hs-dark)" />
+      {Array.from({ length: 47 }, (_, i) => (
+        <g key={i}>
+          <rect x={140 + i * 10} y="70" width="7" height="210" fill={i % 3 === 0 ? '#a47a48' : i % 3 === 1 ? '#d3ad7b' : '#bd9460'} opacity="0.55" />
+          <rect x={147 + i * 10} y="70" width="3" height="210" fill="#2b1d0e" opacity="0.35" />
         </g>
       ))}
-      <g filter="url(#hs-glow)">
-        <image href="/cd-mark.png" x="200" y="152" width="124" height="63" />
-        <image href="/logo-wordmark.png" x="340" y="142" width="212" height="52" />
+      <rect x="140" y="70" width="470" height="210" fill="url(#hs-spot)" opacity="0.55" />
+      {/* white backing plate */}
+      <rect x="170" y="108" width="410" height="146" rx="6" fill="url(#hs-plate)" filter="url(#hs-drop)" />
+      <rect x="170" y="108" width="410" height="146" rx="6" fill="none" stroke="#ffffff" strokeOpacity="0.9" />
+
+      {/* mounted logo */}
+      <g filter="url(#hs-logo-shadow)">
+        <image href="/cd-mark.png" x="196" y="154" width="124" height="63" />
+        <image href="/logo-wordmark.png" x="338" y="143" width="222" height="55" />
       </g>
 
       {/* window with daylight */}
@@ -151,9 +167,9 @@ export default function HeroScene() {
         <rect x="652" y="262" width="32" height="188" />
         <rect x="692" y="318" width="22" height="132" />
       </g>
-      <rect x="610" y="30" width="140" height="420" fill="none" stroke="#0b1711" strokeWidth="7" />
-      <line x1="680" y1="30" x2="680" y2="450" stroke="#0b1711" strokeWidth="5" />
-      <line x1="610" y1="200" x2="750" y2="200" stroke="#0b1711" strokeWidth="5" />
+      <rect x="610" y="30" width="140" height="420" fill="none" stroke="#e9e6df" strokeWidth="7" />
+      <line x1="680" y1="30" x2="680" y2="450" stroke="#e9e6df" strokeWidth="5" />
+      <line x1="610" y1="200" x2="750" y2="200" stroke="#e9e6df" strokeWidth="5" />
       {/* light beams from the window */}
       <polygon points="610,60 610,300 300,450 380,330" fill="url(#hs-beam)" opacity="0.22" />
 
@@ -172,27 +188,28 @@ export default function HeroScene() {
       {/* window light patch on floor */}
       <polygon points="250,462 520,462 600,560 190,560" fill="#fff6d6" opacity="0.22" filter="url(#hs-blur-soft)" />
       {/* wall/floor shadow line */}
-      <rect y="446" width="700" height="10" fill="#050b07" opacity="0.5" filter="url(#hs-blur3)" />
-      <rect y="448" width="700" height="2" fill="#0b1711" />
+      <rect y="446" width="700" height="10" fill="#050b07" opacity="0.25" filter="url(#hs-blur3)" />
+      <rect y="448" width="700" height="3" fill="#8f8a7f" />
+      <rect y="438" width="700" height="10" fill="#f6f4ee" />
       {/* logo reflection on the floor */}
-      <g mask="url(#hs-reflect-mask)" opacity="0.55" transform="translate(0 900) scale(1 -1)">
-        <image href="/cd-mark.png" x="200" y="466" width="124" height="63" />
-        <image href="/logo-wordmark.png" x="340" y="476" width="212" height="52" />
+      <g mask="url(#hs-reflect-mask)" opacity="0.3" transform="translate(0 900) scale(1 -1)">
+        <image href="/cd-mark.png" x="196" y="466" width="124" height="63" />
+        <image href="/logo-wordmark.png" x="338" y="476" width="222" height="55" />
       </g>
 
       {/* lounge bench */}
       <g>
         <ellipse cx="445" cy="470" rx="130" ry="9" fill="#000" opacity="0.28" filter="url(#hs-blur3)" />
-        <rect x="330" y="404" width="230" height="46" rx="10" fill="#26332c" />
-        <rect x="330" y="404" width="230" height="10" rx="5" fill="#3a4a41" />
-        <rect x="338" y="414" width="214" height="26" rx="6" fill="#1b2620" />
+        <rect x="330" y="404" width="230" height="46" rx="10" fill="#4a4f52" />
+        <rect x="330" y="404" width="230" height="10" rx="5" fill="#62686b" />
+        <rect x="338" y="414" width="214" height="26" rx="6" fill="#3a3e41" />
         <rect x="345" y="448" width="5" height="18" fill="#c9a24a" />
         <rect x="540" y="448" width="5" height="18" fill="#c9a24a" />
       </g>
 
       {/* plant */}
       <g>
-        <g transform="translate(168 372) skewX(-18)" opacity="0.35" filter="url(#hs-blur6)">
+        <g transform="translate(168 372) skewX(-18)" opacity="0.14" filter="url(#hs-blur6)">
           <Plant shadow />
         </g>
         <ellipse cx="108" cy="458" rx="40" ry="7" fill="#000" opacity="0.35" filter="url(#hs-blur3)" />
