@@ -1,20 +1,4 @@
-const services = [
-  {
-    icon: '£',
-    title: 'Accounting',
-    text: 'Reliable accounting support to help you understand your financial position and keep your records organised.',
-  },
-  {
-    icon: '✓',
-    title: 'Bookkeeping',
-    text: 'Accurate, structured bookkeeping so your day-to-day financial records stay clear and up to date.',
-  },
-  {
-    icon: '%',
-    title: 'Tax Consultancy',
-    text: 'Practical tax guidance to help you understand your responsibilities and approach tax with confidence.',
-  },
-]
+import { serviceGroups } from '../data/services.js'
 
 export default function Services() {
   return (
@@ -24,16 +8,20 @@ export default function Services() {
           <span className="eyebrow">What we do</span>
           <h2>Professional services for your financial needs</h2>
           <p>
-            From keeping your books in order to supporting your tax
-            obligations, we help make your finances easier to manage.
+            From everyday bookkeeping and payroll to tax planning and
+            audit support, we help make your finances easier to manage.
           </p>
         </div>
-        <div className="cards">
-          {services.map((service) => (
-            <div className="card" key={service.title}>
-              <div className="icon">{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
+        <div className="cards cards-five">
+          {serviceGroups.map((group) => (
+            <div className="card" key={group.id} id={`service-${group.id}`}>
+              <div className="icon" aria-hidden="true">{group.icon}</div>
+              <h3>{group.title}</h3>
+              <ul className="service-list">
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

@@ -2,13 +2,14 @@ export default function Cta() {
   return (
     <section className="cta">
       <div className="container">
-        <h2>Ready to get your finances in order?</h2>
+        <h2>Helping your business grow</h2>
         <p>
-          Tell us what you need and start a conversation with Crush
-          Digits Accountants Limited.
+          From bookkeeping and payroll to tax planning and audit support,
+          we support each stage of your financial journey. Tell us what you
+          need and start a conversation with Crush Digits Accountants Limited.
         </p>
         <a className="btn" href="#contact">
-          Contact Us
+          Get in Touch
         </a>
       </div>
     </section>

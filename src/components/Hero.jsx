@@ -9,12 +9,12 @@ export default function Hero() {
             className="wordmark-image"
           />
           <p className="company-name">Crush Digits Accountants Limited</p>
-          <span className="badge">ACCOUNTING • BOOKKEEPING • TAX</span>
+          <span className="badge">ACCOUNTING • TAX • PAYROLL • ADVISORY</span>
           <h1>Clarity in your numbers. Confidence in your business.</h1>
           <p>
-            Professional accounting and tax support designed to help
-            businesses stay organised, compliant and ready for the next
-            stage of growth.
+            Professional accounting, tax, payroll and advisory support
+            designed to help businesses and individuals stay organised,
+            compliant and ready for the next stage of growth.
           </p>
           <a className="btn" href="#contact">
             Speak to Us
@@ -28,19 +28,23 @@ export default function Hero() {
           <p>Practical financial support with a clear, professional approach.</p>
           <div className="check">
             <b>✓</b>
-            <span>Accounting & auditing support</span>
+            <span>Accounting services</span>
           </div>
           <div className="check">
             <b>✓</b>
-            <span>Bookkeeping services</span>
+            <span>Tax services</span>
           </div>
           <div className="check">
             <b>✓</b>
-            <span>Tax consultancy</span>
+            <span>Business advisory</span>
           </div>
           <div className="check">
             <b>✓</b>
-            <span>Business-focused guidance</span>
+            <span>Audit &amp; assurance</span>
+          </div>
+          <div className="check">
+            <b>✓</b>
+            <span>Payroll &amp; employer services</span>
           </div>
         </div>
       </div>

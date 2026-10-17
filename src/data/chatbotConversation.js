@@ -42,32 +42,20 @@ export const conversationNodes = {
     ],
     options: [
       { label: 'Accounting services', next: 'accounting', event: CHATBOT_EVENTS.SERVICE_INTEREST_SELECTED },
-      { label: 'Bookkeeping', next: 'bookkeeping', event: CHATBOT_EVENTS.SERVICE_INTEREST_SELECTED },
-      { label: 'Tax consultancy', next: 'tax', event: CHATBOT_EVENTS.SERVICE_INTEREST_SELECTED },
-      { label: "I'm starting a business", next: 'starting_business' },
+      { label: 'Tax services', next: 'tax', event: CHATBOT_EVENTS.SERVICE_INTEREST_SELECTED },
+      { label: 'Payroll & employer services', next: 'payroll', event: CHATBOT_EVENTS.SERVICE_INTEREST_SELECTED },
+      { label: 'Business startup & advisory', next: 'advisory', event: CHATBOT_EVENTS.SERVICE_INTEREST_SELECTED },
+      { label: 'Audit & assurance', next: 'audit', event: CHATBOT_EVENTS.SERVICE_INTEREST_SELECTED },
       { label: 'Pricing', next: 'pricing', event: CHATBOT_EVENTS.PRICING_QUESTION },
-      { label: "I'm not sure what I need", next: 'not_sure' },
-      { label: 'Something else', next: 'something_else' },
+      { label: "I'm not sure / something else", next: 'not_sure' },
     ],
   },
 
   accounting: {
     id: 'accounting',
     messages: [
-      'We provide accounting support to help you understand your financial position and keep your records organised, so you always have a clear picture of where your business stands.',
-      'Would you like our team to take a look at your situation?',
-    ],
-    options: [
-      { label: 'Contact us', action: 'contact' },
-      { label: 'Back to menu', next: 'root' },
-    ],
-  },
-
-  bookkeeping: {
-    id: 'bookkeeping',
-    messages: [
-      'We offer accurate, structured bookkeeping so your day-to-day financial records stay clear and up to date.',
-      'Want us to see how this could work for your business?',
+      'Our accounting services include year-end accounts, management accounts, bookkeeping, VAT returns, payroll processing, CIS returns and cloud accounting setup.',
+      'Would you like our team to look at what suits your business?',
     ],
     options: [
       { label: 'Contact us', action: 'contact' },
@@ -78,21 +66,22 @@ export const conversationNodes = {
   tax: {
     id: 'tax',
     messages: [
-      'We provide tax consultancy to help you understand your responsibilities and approach tax with confidence.',
-      'Would you like to know a bit more, or speak with our team directly?',
+      'We help with corporation tax and self-assessment returns, personal tax planning, capital gains tax, VAT advice and registration, and director and dividend tax planning.',
+      'Which would you like to know more about?',
     ],
     options: [
-      { label: 'Tell me more', next: 'tax_more' },
+      { label: 'Business tax', next: 'tax_business' },
+      { label: 'Personal tax', next: 'tax_personal' },
       { label: 'Speak to the team', next: 'speak_to_team' },
       { label: 'Back to menu', next: 'root' },
     ],
   },
 
-  tax_more: {
-    id: 'tax_more',
+  tax_business: {
+    id: 'tax_business',
     messages: [
-      "Every tax situation is different, so we look at your specific circumstances rather than giving general answers here.",
-      'The best next step is a conversation with our team, who can advise properly based on your situation.',
+      'For businesses we can help with corporation tax returns, VAT advice and registration, tax efficiency planning, and dividend and director tax planning.',
+      'Every situation is different, so our team will need to look at your details before advising.',
     ],
     options: [
       { label: 'Contact us', action: 'contact' },
@@ -100,14 +89,50 @@ export const conversationNodes = {
     ],
   },
 
-  starting_business: {
-    id: 'starting_business',
+  tax_personal: {
+    id: 'tax_personal',
     messages: [
-      "Great — if you're starting a business, we can help you understand the accounting and tax side of getting set up, so you start on the right footing.",
-      'Would you like to speak with our team about this?',
+      'For individuals we can help with self-assessment tax returns, personal tax planning and capital gains tax advice.',
+      'Every situation is different, so our team will need to look at your details before advising.',
+    ],
+    options: [
+      { label: 'Contact us', action: 'contact' },
+      { label: 'Back to menu', next: 'root' },
+    ],
+  },
+
+  payroll: {
+    id: 'payroll',
+    messages: [
+      'Our payroll and employer services cover employee payroll management, pension auto-enrolment, PAYE administration, payroll reporting and director payroll.',
+      'Would you like to talk through your payroll needs with our team?',
+    ],
+    options: [
+      { label: 'Contact us', action: 'contact' },
+      { label: 'Back to menu', next: 'root' },
+    ],
+  },
+
+  advisory: {
+    id: 'advisory',
+    messages: [
+      'Our business advisory services include startup support, company formation, budgeting and forecasting, financial strategy, growth support, profit improvement advice and software guidance.',
+      'Would you like to speak with our team about getting started?',
     ],
     options: [
       { label: 'Speak to the team', next: 'speak_to_team' },
+      { label: 'Back to menu', next: 'root' },
+    ],
+  },
+
+  audit: {
+    id: 'audit',
+    messages: [
+      'Our audit and assurance services include statutory and internal audits, independent examinations, financial reviews, compliance reporting and risk assessment support.',
+      'The right option depends on your organisation, so our team can advise on what applies to you.',
+    ],
+    options: [
+      { label: 'Contact us', action: 'contact' },
       { label: 'Back to menu', next: 'root' },
     ],
   },
@@ -128,13 +153,14 @@ export const conversationNodes = {
   not_sure: {
     id: 'not_sure',
     messages: [
-      'No problem — a couple of quick questions will help point you in the right direction.',
+      'No problem — a quick question will help point you in the right direction.',
       'What best describes you?',
     ],
     options: [
-      { label: "I'm starting a business", next: 'starting_business' },
+      { label: "I'm starting a business", next: 'advisory' },
       { label: 'I already run a business', next: 'business_needs' },
-      { label: 'I have a personal tax matter', next: 'tax' },
+      { label: 'I have a personal tax matter', next: 'tax_personal' },
+      { label: 'Common questions', next: 'something_else' },
       { label: 'I just want to talk to someone', next: 'speak_to_team' },
       { label: 'Back to menu', next: 'root' },
     ],
@@ -144,9 +170,10 @@ export const conversationNodes = {
     id: 'business_needs',
     messages: ['What are you looking for?'],
     options: [
-      { label: 'Accounting', next: 'accounting', event: CHATBOT_EVENTS.SERVICE_INTEREST_SELECTED },
-      { label: 'Bookkeeping', next: 'bookkeeping', event: CHATBOT_EVENTS.SERVICE_INTEREST_SELECTED },
-      { label: 'Tax consultancy', next: 'tax', event: CHATBOT_EVENTS.SERVICE_INTEREST_SELECTED },
+      { label: 'Accounting', next: 'accounting' },
+      { label: 'Tax', next: 'tax_business' },
+      { label: 'Payroll', next: 'payroll' },
+      { label: 'Advisory', next: 'advisory' },
       { label: "I'm not sure", next: 'speak_to_team' },
       { label: 'Back to menu', next: 'root' },
     ],
@@ -169,6 +196,7 @@ export const conversationNodes = {
     messages: ['Here are a few common questions:'],
     options: [
       { label: 'What services do you offer?', next: 'faq_services' },
+      { label: 'Who do you work with?', next: 'faq_clients' },
       { label: 'How do I get in touch?', next: 'speak_to_team' },
       { label: 'Where are you based?', next: 'faq_location' },
       { label: 'Back to menu', next: 'root' },
@@ -178,10 +206,21 @@ export const conversationNodes = {
   faq_services: {
     id: 'faq_services',
     messages: [
-      'We offer three core services: Accounting, Bookkeeping and Tax Consultancy.',
+      'We offer five service areas: Accounting, Tax, Business Advisory, Audit & Assurance, and Payroll & Employer Services.',
     ],
     options: [
       { label: 'Contact us', action: 'contact' },
+      { label: 'Back to menu', next: 'root' },
+    ],
+  },
+
+  faq_clients: {
+    id: 'faq_clients',
+    messages: [
+      'We support startups, growing companies, contractors, established businesses and individuals.',
+    ],
+    options: [
+      { label: 'Speak to the team', next: 'speak_to_team' },
       { label: 'Back to menu', next: 'root' },
     ],
   },

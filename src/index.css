@@ -93,10 +93,34 @@ footer{background:var(--brand-evergreen);color:#d9e6dc;padding:34px 0;border-top
 
 .wordmark-image{display:block;width:min(100%,340px);height:auto;max-height:280px;object-fit:contain;margin:0 -26px 0;filter:drop-shadow(0 8px 18px rgba(23,47,21,.07))}
 
+/* ---------- Home page structure additions ---------- */
+.topbar{background:var(--brand-evergreen);color:#d9e6dc;font-size:13px}
+.topbar-row{display:flex;gap:26px;align-items:center;min-height:38px;flex-wrap:wrap}
+.topbar a:hover{color:var(--brand-yellow-green)}
+.topbar-address{margin-left:auto}
+.cards-five{grid-template-columns:repeat(6,1fr)}
+.cards-five .card{grid-column:span 2}
+.cards-five .card:nth-child(n+4){grid-column:span 3}
+.service-list{list-style:none;display:grid;gap:8px}
+.service-list li{position:relative;padding-left:22px;color:var(--muted);font-size:14px}
+.service-list li:before{content:"✓";position:absolute;left:0;color:var(--brand-medium-jungle);font-weight:900}
+.why{background:#fff}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.why-list{list-style:none;display:grid;gap:14px}
+.why-list li{display:flex;gap:14px;align-items:center;padding:18px 20px;border:1px solid rgba(23,47,21,.09);border-radius:16px;background:linear-gradient(145deg,#f8faf6,#eef4eb);font-weight:700;color:var(--brand-evergreen)}
+.why-list b{display:grid;place-items:center;flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--brand-yellow-green);color:var(--brand-evergreen)}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;margin-bottom:6px}
+.footer-text{margin-top:10px;font-size:14px;line-height:1.8}
+.footer-text a:hover,.footer-links a:hover{color:var(--brand-yellow-green)}
+.footer-links{list-style:none;display:grid;gap:8px;font-size:14px;align-content:start}
+
 @media(max-width:800px){
   nav{display:none}
   .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
-  .cards{grid-template-columns:1fr}
+  .cards,.cards-five{grid-template-columns:1fr}
+  .cards-five .card,.cards-five .card:nth-child(n+4){grid-column:auto}
+  .why-grid,.footer-grid{grid-template-columns:1fr}
+  .topbar-address{display:none}
   .hero{padding:65px 0}
   .hero-card{margin-top:10px}
   section{padding:65px 0}

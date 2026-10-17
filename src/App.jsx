@@ -1,3 +1,5 @@
+import TopBar from './components/TopBar.jsx'
+import WhyUs from './components/WhyUs.jsx'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Services from './components/Services.jsx'
@@ -10,10 +12,12 @@ import Chatbot from './components/Chatbot.jsx'
 export default function App() {
   return (
     <>
+      <TopBar />
       <Header />
       <main>
         <Hero />
         <Services />
+        <WhyUs />
         <About />
         <Cta />
         <Contact />

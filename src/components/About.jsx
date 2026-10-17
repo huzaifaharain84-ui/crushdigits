@@ -7,7 +7,7 @@ export default function About() {
           <h2>A straightforward approach to accounting.</h2>
           <p>
             Crush Digits Accountants Limited is a UK private limited
-            company providing accounting, bookkeeping and tax consultancy
+            company providing accounting, tax, payroll and business advisory
             services.
           </p>
           <p>
