@@ -51,9 +51,9 @@ export default function HeroScene() {
     >
       <defs>
         <linearGradient id="hs-wall" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#223a2e" />
-          <stop offset="0.6" stopColor="#15271e" />
-          <stop offset="1" stopColor="#0d1a13" />
+          <stop offset="0" stopColor="#263d53" />
+          <stop offset="0.6" stopColor="#132b40" />
+          <stop offset="1" stopColor="#0b1b2b" />
         </linearGradient>
         <linearGradient id="hs-floor" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#cfcac0" />
@@ -61,9 +61,9 @@ export default function HeroScene() {
           <stop offset="1" stopColor="#8f8b81" />
         </linearGradient>
         <radialGradient id="hs-spot" cx="0.5" cy="0" r="0.9">
-          <stop offset="0" stopColor="#eafbe0" stopOpacity="0.55" />
-          <stop offset="0.5" stopColor="#bfe8a8" stopOpacity="0.14" />
-          <stop offset="1" stopColor="#bfe8a8" stopOpacity="0" />
+          <stop offset="0" stopColor="#d9edff" stopOpacity="0.52" />
+          <stop offset="0.5" stopColor="#8fc8ff" stopOpacity="0.14" />
+          <stop offset="1" stopColor="#8fc8ff" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="hs-glass" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#f3fbf6" />
@@ -110,7 +110,7 @@ export default function HeroScene() {
           <feColorMatrix values="0.16 0 0 0 0  0 0.2 0 0 0  0 0 0.16 0 0  0 0 0 1 0" />
         </filter>
         <filter id="hs-glow" x="-20%" y="-30%" width="140%" height="160%">
-          <feDropShadow dx="0" dy="0" stdDeviation="7" floodColor="#7fe06a" floodOpacity="0.45" />
+          <feDropShadow dx="0" dy="0" stdDeviation="7" floodColor="#4da9ff" floodOpacity="0.42" />
         </filter>
       </defs>
 
@@ -125,7 +125,7 @@ export default function HeroScene() {
         <ellipse cx="470" cy="6" rx="16" ry="4" />
       </g>
       {/* slim wall panel behind the logo */}
-      <rect x="170" y="100" width="410" height="150" rx="3" fill="#0b1711" opacity="0.55" />
+      <rect x="170" y="100" width="410" height="150" rx="3" fill="#071522" opacity="0.55" />
       <rect x="170" y="100" width="410" height="150" rx="3" fill="none" stroke="#ffffff" strokeOpacity="0.07" />
 
       {/* logo: shadow, depth layers, face */}
