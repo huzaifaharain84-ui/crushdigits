@@ -1,14 +1,10 @@
+import HeroScene from './HeroScene.jsx'
+
 export default function Hero() {
   return (
     <section className="hero" id="home">
-      <div className="container hero-grid">
-        <div>
-          <img
-            src="/wordmark.png"
-            alt="Crush Digits Accountants Limited wordmark"
-            className="wordmark-image"
-          />
-          <p className="company-name">Crush Digits Accountants Limited</p>
+      <div className="container hero-inner">
+        <div className="hero-copy">
           <span className="badge">ACCOUNTING • TAX • PAYROLL • ADVISORY</span>
           <h1>Clarity in your numbers. Confidence in your business.</h1>
           <p>
@@ -17,35 +13,18 @@ export default function Hero() {
             compliant and ready for the next stage of growth.
           </p>
           <a className="btn" href="#contact">
-            Speak to Us
+            Get in Touch
           </a>
           <a className="btn secondary" href="#services">
             Our Services
           </a>
         </div>
-        <div className="hero-card">
-          <h3>Accounting made simpler.</h3>
-          <p>Practical financial support with a clear, professional approach.</p>
-          <div className="check">
-            <b>✓</b>
-            <span>Accounting services</span>
-          </div>
-          <div className="check">
-            <b>✓</b>
-            <span>Tax services</span>
-          </div>
-          <div className="check">
-            <b>✓</b>
-            <span>Business advisory</span>
-          </div>
-          <div className="check">
-            <b>✓</b>
-            <span>Audit &amp; assurance</span>
-          </div>
-          <div className="check">
-            <b>✓</b>
-            <span>Payroll &amp; employer services</span>
-          </div>
+      </div>
+      <div className="hero-visual" aria-hidden={false}>
+        <span className="hero-ribbon hero-ribbon-gold" aria-hidden="true" />
+        <span className="hero-ribbon hero-ribbon-green" aria-hidden="true" />
+        <div className="hero-image">
+          <HeroScene />
         </div>
       </div>
     </section>

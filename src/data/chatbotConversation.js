@@ -45,7 +45,6 @@ export const conversationNodes = {
       { label: 'Tax services', next: 'tax', event: CHATBOT_EVENTS.SERVICE_INTEREST_SELECTED },
       { label: 'Payroll & employer services', next: 'payroll', event: CHATBOT_EVENTS.SERVICE_INTEREST_SELECTED },
       { label: 'Business startup & advisory', next: 'advisory', event: CHATBOT_EVENTS.SERVICE_INTEREST_SELECTED },
-      { label: 'Audit & assurance', next: 'audit', event: CHATBOT_EVENTS.SERVICE_INTEREST_SELECTED },
       { label: 'Pricing', next: 'pricing', event: CHATBOT_EVENTS.PRICING_QUESTION },
       { label: "I'm not sure / something else", next: 'not_sure' },
     ],
@@ -125,18 +124,6 @@ export const conversationNodes = {
     ],
   },
 
-  audit: {
-    id: 'audit',
-    messages: [
-      'Our audit and assurance services include statutory and internal audits, independent examinations, financial reviews, compliance reporting and risk assessment support.',
-      'The right option depends on your organisation, so our team can advise on what applies to you.',
-    ],
-    options: [
-      { label: 'Contact us', action: 'contact' },
-      { label: 'Back to menu', next: 'root' },
-    ],
-  },
-
   pricing: {
     id: 'pricing',
     messages: [
@@ -206,7 +193,7 @@ export const conversationNodes = {
   faq_services: {
     id: 'faq_services',
     messages: [
-      'We offer five service areas: Accounting, Tax, Business Advisory, Audit & Assurance, and Payroll & Employer Services.',
+      'We offer four service areas: Accounting, Tax, Business Advisory, and Payroll & Employer Services.',
     ],
     options: [
       { label: 'Contact us', action: 'contact' },
@@ -227,9 +214,9 @@ export const conversationNodes = {
 
   faq_location: {
     id: 'faq_location',
-    messages: ["We're a UK-based firm, registered in Huddersfield, England."],
+    messages: ['Our address is shown in the Contact section of this page, next to the enquiry form.'],
     options: [
-      { label: 'Speak to the team', next: 'speak_to_team' },
+      { label: 'Open contact form', action: 'contact' },
       { label: 'Back to menu', next: 'root' },
     ],
   },

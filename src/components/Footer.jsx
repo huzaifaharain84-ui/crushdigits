@@ -31,11 +31,7 @@ export default function Footer() {
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-        <div className="legal">
-          © 2026 Crush Digits Accountants Limited. Company No. 16386067.
-          Registered office: 333 Leeds Road, Huddersfield, England, HD2
-          1YB. Website: crushdigits.vercel.app
-        </div>
+        <div className="legal">© 2026 Crush Digits Accountants Limited.</div>
       </div>
     </footer>
   )

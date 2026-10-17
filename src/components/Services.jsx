@@ -9,12 +9,17 @@ export default function Services() {
           <h2>Professional services for your financial needs</h2>
           <p>
             From everyday bookkeeping and payroll to tax planning and
-            audit support, we help make your finances easier to manage.
+            business advice, we help make your finances easier to manage.
           </p>
         </div>
-        <div className="cards cards-five">
+        <div className="cards cards-four">
           {serviceGroups.map((group) => (
-            <div className="card" key={group.id} id={`service-${group.id}`}>
+            <div
+              className="card"
+              key={group.id}
+              id={`service-${group.id}`}
+              data-tone={group.tone}
+            >
               <div className="icon" aria-hidden="true">{group.icon}</div>
               <h3>{group.title}</h3>
               <ul className="service-list">

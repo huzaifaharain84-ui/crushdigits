@@ -49,7 +49,7 @@ export default function Contact() {
           <div className="contact-info">
             <h3>Crush Digits Accountants Limited</h3>
             <div className="contact-item">
-              <small>Registered office</small>
+              <small>Address</small>
               <strong>
                 333 Leeds Road
                 <br />
@@ -59,20 +59,17 @@ export default function Contact() {
               </strong>
             </div>
             <div className="contact-item">
-              <small>Company number</small>
-              <strong>16386067</strong>
-            </div>
-            <div className="contact-item">
               <small>Phone</small>
-              <strong>03300431234</strong>
+              <strong>
+                <a href="tel:03300431234">03300431234</a>
+              </strong>
             </div>
             <div className="contact-item">
-              <small>Website</small>
-              <strong>crushdigits.co.uk</strong>
+              <small>Email</small>
+              <strong>
+                <a href="mailto:info@crushdigits.co.uk">info@crushdigits.co.uk</a>
+              </strong>
             </div>
-            {/* Note: the Footer now shows crushdigits.vercel.app per your latest request —
-                left this contact-info entry as crushdigits.co.uk since you only asked
-                for the footer change. Let me know if you want this one updated too. */}
           </div>
 
           <form onSubmit={handleSubmit}>
@@ -108,7 +105,7 @@ export default function Contact() {
               {status === 'sending' ? 'Sending…' : 'Send Enquiry'}
             </button>
             {status === 'sent' && (
-              <p style={{ color: '#1e63b5', fontWeight: 600 }}>
+              <p style={{ color: '#146934', fontWeight: 600 }}>
                 Thank you — your enquiry has been sent. We'll be in touch
                 soon.
               </p>

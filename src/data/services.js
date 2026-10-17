@@ -6,6 +6,7 @@ export const serviceGroups = [
   {
     id: 'accounting',
     icon: '£',
+    tone: 'emerald',
     title: 'Accounting Services',
     items: [
       'Year-end accounts preparation',
@@ -20,6 +21,7 @@ export const serviceGroups = [
   {
     id: 'tax',
     icon: '%',
+    tone: 'lime',
     title: 'Tax Services',
     items: [
       'Corporation tax returns',
@@ -34,6 +36,7 @@ export const serviceGroups = [
   {
     id: 'advisory',
     icon: '↗',
+    tone: 'teal',
     title: 'Business Advisory',
     items: [
       'Business startup support',
@@ -46,21 +49,9 @@ export const serviceGroups = [
     ],
   },
   {
-    id: 'audit',
-    icon: '✓',
-    title: 'Audit & Assurance',
-    items: [
-      'Statutory audits',
-      'Internal audits',
-      'Independent examinations',
-      'Financial reviews',
-      'Compliance reporting',
-      'Risk assessment support',
-    ],
-  },
-  {
     id: 'payroll',
     icon: '◎',
+    tone: 'gold',
     title: 'Payroll & Employer Services',
     items: [
       'Employee payroll management',

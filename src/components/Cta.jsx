@@ -4,7 +4,7 @@ export default function Cta() {
       <div className="container">
         <h2>Helping your business grow</h2>
         <p>
-          From bookkeeping and payroll to tax planning and audit support,
+          From bookkeeping and payroll to tax planning and business advice,
           we support each stage of your financial journey. Tell us what you
           need and start a conversation with Crush Digits Accountants Limited.
         </p>
