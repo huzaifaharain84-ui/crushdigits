@@ -4,7 +4,7 @@ export default function Header() {
       <div className="container nav">
         <a href="#home" aria-label="Crush Digits Accountants Limited — home">
           <img
-            src="/logo-wordmark.png"
+            src="/logo-wordmark-dark.png"
             alt="Crush Digits Accountants - Tax Consultants"
             className="logo-image"
           />

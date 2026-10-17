@@ -46,32 +46,6 @@ export default function Contact() {
           <p>Send us a message and we can discuss how we can support you.</p>
         </div>
         <div className="contact-grid">
-          <div className="contact-info">
-            <h3>Crush Digits Accountants Limited</h3>
-            <div className="contact-item">
-              <small>Address</small>
-              <strong>
-                333 Leeds Road
-                <br />
-                Huddersfield, England
-                <br />
-                HD2 1YB
-              </strong>
-            </div>
-            <div className="contact-item">
-              <small>Phone</small>
-              <strong>
-                <a href="tel:03300431234">03300431234</a>
-              </strong>
-            </div>
-            <div className="contact-item">
-              <small>Email</small>
-              <strong>
-                <a href="mailto:info@crushdigits.co.uk">info@crushdigits.co.uk</a>
-              </strong>
-            </div>
-          </div>
-
           <form onSubmit={handleSubmit}>
             <input
               required

@@ -79,17 +79,20 @@ section{padding:85px 0}
 .about-copy p{color:var(--muted);margin-bottom:18px}
 
 /* CTA */
-.cta{position:relative;background:linear-gradient(135deg,var(--brand-evergreen),var(--brand-dark-emerald) 70%,#0f6b4a);color:#fff;text-align:center;overflow:hidden}
+.cta{position:relative;background:linear-gradient(135deg,var(--brand-evergreen),var(--brand-dark-emerald) 70%,#0f6b4a);color:#fff;overflow:hidden}
 .cta:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-210px;top:-210px;border:1px solid rgba(133,212,60,.22);box-shadow:0 0 0 45px rgba(133,212,60,.04)}
-.cta h2,.cta p,.cta .btn{position:relative;z-index:1}
+.cta-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
 .cta h2{font-size:42px;line-height:1.15;margin-bottom:14px}
-.cta p{color:#dfeee3;max-width:650px;margin:0 auto 28px}
+.cta p{color:#dfeee3;max-width:600px;margin:0 0 28px}
 .cta .btn{background:var(--brand-gold);color:var(--brand-evergreen);box-shadow:0 12px 28px rgba(217,162,27,.3)}
 .cta .btn:hover{background:#f0c04a;color:var(--brand-evergreen)}
+.cta-visual{display:flex;justify-content:center}
+.cta-person,.cta-photo{display:block;width:min(100%,320px);height:auto;filter:drop-shadow(0 20px 30px rgba(0,0,0,.3))}
+.cta-photo{border-radius:50%;aspect-ratio:1;object-fit:cover}
 
 /* Contact */
 .contact{background:linear-gradient(180deg,#fff 0%,#f1f8ec 100%)}
-.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px}
+.contact-grid{display:grid;grid-template-columns:1fr;max-width:720px;margin:0 auto}
 .contact-info{background:linear-gradient(145deg,#f8faf6,#e6f3e0);border:1px solid rgba(23,47,21,.08);border-top:5px solid var(--brand-dark-emerald);border-radius:20px;padding:35px;box-shadow:0 12px 32px rgba(23,47,21,.07)}
 .contact-info h3{color:var(--brand-evergreen);font-size:25px;margin-bottom:18px}
 .contact-item{margin:18px 0}
@@ -122,7 +125,10 @@ footer{background:linear-gradient(180deg,#10250f,var(--brand-evergreen));color:#
   .hero-visual{position:relative;width:100%;height:320px}
   .hero-image{clip-path:none}
   .hero-ribbon{display:none}
-  .about-grid,.contact-grid,.why-grid,.footer-grid{grid-template-columns:1fr}
+  .about-grid,.contact-grid,.why-grid,.footer-grid,.cta-grid{grid-template-columns:1fr}
+  .cta-copy{text-align:center}
+  .cta p{margin:0 auto 28px}
+  .cta-person,.cta-photo{width:240px}
   .cards,.cards-four{grid-template-columns:1fr}
   section{padding:65px 0}
   .section-head h2,.about-copy h2,.cta h2{font-size:32px}

@@ -214,7 +214,7 @@ export const conversationNodes = {
 
   faq_location: {
     id: 'faq_location',
-    messages: ['Our address is shown in the Contact section of this page, next to the enquiry form.'],
+    messages: ['Our address is at the bottom of this page, in the footer.'],
     options: [
       { label: 'Open contact form', action: 'contact' },
       { label: 'Back to menu', next: 'root' },
