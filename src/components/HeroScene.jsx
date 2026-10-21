@@ -105,9 +105,6 @@ export default function HeroScene() {
         <filter id="hs-logo-shadow" x="-10%" y="-20%" width="125%" height="150%">
           <feDropShadow dx="1.5" dy="3" stdDeviation="2.2" floodColor="#1c3a22" floodOpacity="0.4" />
         </filter>
-        <mask id="hs-reflect-mask">
-          <rect x="0" y="440" width="700" height="140" fill="url(#hs-fade)" />
-        </mask>
         <filter id="hs-noise" x="0" y="0" width="100%" height="100%">
           <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" />
           <feColorMatrix values="0 0 0 0 0.35  0 0 0 0 0.3  0 0 0 0 0.25  0 0 0 0.10 0" />
@@ -191,11 +188,6 @@ export default function HeroScene() {
       <rect y="446" width="700" height="10" fill="#050b07" opacity="0.25" filter="url(#hs-blur3)" />
       <rect y="448" width="700" height="3" fill="#8f8a7f" />
       <rect y="438" width="700" height="10" fill="#f6f4ee" />
-      {/* logo reflection on the floor */}
-      <g mask="url(#hs-reflect-mask)" opacity="0.3" transform="translate(0 900) scale(1 -1)">
-        <image href="/cd-mark.png" x="196" y="466" width="124" height="63" />
-        <image href="/logo-wordmark.png" x="338" y="476" width="222" height="55" />
-      </g>
 
       {/* lounge bench */}
       <g>
